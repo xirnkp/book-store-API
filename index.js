@@ -3,20 +3,28 @@ const express = require('express')
     const app = express()
     const port = 9999
 
-    app.get('/PesanMenu',(req,res) =>{
-        res.send("Mau Pesan Apa ?")
-    })
+    app.get("/PesanMenu", (req, res) => {
+        res.json({
+            message: "jadi mau pesen apa",
+        });
+    });
 
-    app.post('/PesanMenu',(req,res) =>{
-        res.send("Mie Ayam")
-    })
+    app.post("/PesanMenu", (req, res) => {
+        res.json({
+            message: "Mie Ayam atau Mie Baso",
+        });
+    });
 
-    app.put('/',(req,res) =>{
-        res.send("Normal atau Jumbo")
-    })
+    app.put("/PesanMenu", (req, res) => {
+        res.json({
+            message: "Mau yang Normal atau Jumbo",
+        });
+    });
 
-    app.delete('/',(req,res) =>{
-        res.send("Apa kah pesanan nya sudah selesai atau belum ?")
-    })
+    app.delete("/PesanMenu", (req, res) => {
+        res.json({
+            message: "Apakah jadi memesan ?",
+        });
+    });
 
     app.listen(port,() => console.log(`Server running on port ${port}`))
